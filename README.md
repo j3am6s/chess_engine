@@ -4,7 +4,7 @@ C++ group project implementing a chess engine that reconstructs a game from its 
 
 ## Overview
 
-The aim of this project was to translate chess rules and decision-making into a working algorithm, from board representation and special-move handling to recursive game-tree exploration. This is a classical search-based engine, not a machine learning model or a graphical chess application.
+The aim of this project was to translate chess rules and decision-making into a working algorithm, from board representation and special-move handling to recursive game-tree exploration. 
 
 ## How it works
 
@@ -31,30 +31,10 @@ cpp-chess-engine/
     └── history.csv    # Empty sample history: the starting position
 ```
 
-## Build and run
-
-Requires a C++11 compiler and CMake 3.15 or later. No third-party C++ libraries are required.
-
-```bash
-cmake -S . -B build
-cmake --build build
-```
-
-The executable is named `michelangelo`, as in the original group project. **Run it from a directory containing `history.csv`**: the input and output paths are relative to the current working directory.
-
-To try it from the initial chess position:
-
-```bash
-cp examples/history.csv history.csv
-./build/michelangelo
-cat move.csv
-```
-
-On Windows with a multi-configuration CMake generator, the executable may instead be under `build/Debug/` or `build/Release/`.
 
 ### Input / output format
 
-The input file contains **one coordinate move per line**, such as:
+The input file contains one coordinate move per line, such as:
 
 ```text
 e2e4
@@ -68,11 +48,7 @@ This is a course-project file protocol; it is **not** a UCI-compatible engine or
 
 ## What we learnt
 
-- Representing a complex rule set as interoperating C++ structures and algorithms.
-- Using bitwise representations, position hashing, and recursive search for a turn-based game.
-- Why handling edge cases such as special moves and checks matters when integrating game logic.
-- Collaborating on a shared codebase and bringing together game logic, input/output, and build configuration.
-
-## Current scope
-
-This repository preserves the group's original engine implementation, with a reorganised directory structure and documentation. It is an academic project rather than a fully validated competitive chess engine. In particular, it does not include a GUI, an interactive game loop, UCI support, or a comprehensive automated chess-rules test suite.
+- Representing a complex rule set as interoperating C++ structures and algorithms
+- Using bitwise representations, position hashing, and recursive search for a turn-based game
+- Why handling edge cases such as special moves and checks matters when integrating game logic
+- Collaborating on a shared codebase and bringing together game logic, input/output, and build configuration
